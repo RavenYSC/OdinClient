@@ -95,6 +95,7 @@ tasks {
         inputs.property("name", project.property("mod.name"))
         inputs.property("version", project.property("mod.version"))
         inputs.property("minecraft", project.property("mod.mc_dep"))
+        inputs.property("odin", project.property("mod.odin_dep"))
 
         filesMatching("fabric.mod.json") {
             expand(
@@ -102,7 +103,8 @@ tasks {
                     "id" to project.property("mod.id"),
                     "name" to project.property("mod.name"),
                     "version" to project.property("mod.version"),
-                    "minecraft" to project.property("mod.mc_dep")
+                    "minecraft" to project.property("mod.mc_dep"),
+                    "odin" to project.property("mod.odin_dep")
                 )
             )
         }
